@@ -1463,3 +1463,77 @@ input[type="range"] { accent-color: var(--purple); }
 @media (prefers-reduced-motion: reduce) {
   .hero-anime, .hero-video-card { animation: none !important; }
 }
+
+/* ============================================================================
+   🌌 V3.2 — background gambar DIHAPUS, diganti nebula animasi murni +
+   posisi badge & chip dirapiin (no more bertabrakan)
+   ========================================================================== */
+
+/* nebula: 3 kabut neon yang ngalir pelan — tanpa gambar sama sekali */
+.hero-media { overflow: hidden; }
+.neo {
+  position: absolute; border-radius: 50%; filter: blur(64px);
+  will-change: transform, opacity; pointer-events: none;
+}
+.neo.n1 {
+  width: 76vw; height: 76vw; min-width: 380px; min-height: 380px;
+  left: -22%; top: -30%;
+  background: radial-gradient(circle at 42% 42%, rgba(168, 85, 247, .55), transparent 66%);
+  animation: neoDrift1 17s ease-in-out infinite alternate;
+}
+.neo.n2 {
+  width: 62vw; height: 62vw; min-width: 320px; min-height: 320px;
+  right: -20%; top: -6%;
+  background: radial-gradient(circle at 55% 45%, rgba(34, 211, 238, .42), transparent 66%);
+  animation: neoDrift2 21s ease-in-out infinite alternate;
+}
+.neo.n3 {
+  width: 84vw; height: 60vw; min-width: 420px; min-height: 300px;
+  left: 4%; bottom: -38%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(236, 72, 153, .34), transparent 68%);
+  animation: neoDrift3 25s ease-in-out infinite alternate;
+}
+@keyframes neoDrift1 {
+  0% { transform: translate(0, 0) scale(1); opacity: .85; }
+  50% { transform: translate(9%, 7%) scale(1.12); }
+  100% { transform: translate(18%, 3%) scale(.96); opacity: .65; }
+}
+@keyframes neoDrift2 {
+  0% { transform: translate(0, 0) scale(1.05); opacity: .7; }
+  100% { transform: translate(-12%, 12%) scale(.92); opacity: .95; }
+}
+@keyframes neoDrift3 {
+  0% { transform: translate(0, 0) rotate(-2deg); opacity: .6; }
+  100% { transform: translate(10%, -8%) rotate(3deg); opacity: .85; }
+}
+
+/* shade dibikin lebih lembut karena ga ada gambar lagi — nebula & videnya yang jadi bintang */
+.hero-shade {
+  background:
+    radial-gradient(120% 50% at 50% 0%, rgba(168, 85, 247, .08) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(4, 5, 13, .3) 0%, rgba(4, 5, 13, .22) 28%, rgba(5, 6, 15, .74) 66%, var(--bg) 97%);
+}
+
+/* badge napas lebih lega */
+.hero-badge { margin-top: 4px; }
+
+/* chip nempel di pojok video card (lawan dari tag KYY REEL) — ga nabrak badge lagi */
+.hvc-tag, .hvc-chip { z-index: 2; }
+.hvc-chip {
+  position: absolute; top: 12px; right: 12px;
+  font-family: var(--font-head); font-size: .62rem; font-weight: 700; letter-spacing: .1em;
+  color: #fff; background: rgba(5, 6, 15, .72); border: 1px solid rgba(34, 211, 238, .5);
+  backdrop-filter: blur(8px); padding: 5px 11px; border-radius: 99px;
+  animation: chipGlow 3.2s ease-in-out infinite;
+}
+@keyframes chipGlow {
+  50% { box-shadow: 0 0 16px rgba(34, 211, 238, .5); border-color: rgba(168, 85, 247, .7); }
+}
+/* di layar sempit chip-nya pindah ke bawah biar videonya leluasa */
+@media (max-width: 420px) {
+  .hvc-chip { top: auto; bottom: 12px; right: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neo, .hvc-chip { animation: none !important; }
+}
