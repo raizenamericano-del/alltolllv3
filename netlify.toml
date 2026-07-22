@@ -1,0 +1,31 @@
+# ============================================================================
+# ⚡ ALL TOOLS KYY — Konfigurasi Netlify
+# Developer : Rifkyy sensei
+# ============================================================================
+
+[build]
+  command = "npm install"
+  publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Semua request /api/* diteruskan ke serverless function api.js
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+# SPA fallback — semua path lain diarahkan ke index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⚡ All Tools KYY — Serba Ada, Tinggal Pencet</title>
+  <meta name="description" content="All-in-One Tools Portal by Rifkyy sensei — 67 tools gratis: downloader, AI studio, brat maker, HD foto, arcade, top anime, dan kawan-kawannya." />
+  <meta name="theme-color" content="#04050d" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="⚡ All Tools KYY" />
+  <meta property="og:description" content="Serba ada, tinggal pencet — 66 tools gratis by Rifkyy sensei" />
+  <meta property="og:image" content="img/hero.png" />
+
+  <!-- Fonts (fallback: system-ui bila offline) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="intro-lock">
+
+  <!-- ==================== INTRO / PRELOADER ==================== -->
+  <div id="intro" aria-hidden="true">
+    <div class="intro-core">
+      <img src="img/logo.png" class="intro-logo" alt="" />
+      <div class="intro-title">ALL TOOLS <b>KYY</b></div>
+      <div class="intro-sub">bentar, lagi nyiapin 67 tools sekaligus…</div>
+      <div class="intro-bar"><span id="introFill"></span></div>
+      <div class="intro-pct" id="introPct">0%</div>
+    </div>
+    <div class="intro-skip">tap di mana aja buat skip ⚡</div>
+  </div>
+
+  <!-- ===================== BACKGROUND FX ===================== -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- ======================== HEADER ========================= -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <img src="img/logo.png" alt="Logo KYY" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">All Tools <b>KYY</b></span>
+          <span class="brand-sub">by Rifkyy sensei</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#tools">Tools</a>
+        <a href="#info">Info</a>
+        <a href="#dev">Developer</a>
+      </nav>
+      <div class="status-pill" id="statusPill" title="Status server API">
+        <span class="pulse-dot"></span>
+        <span id="statusText">Connecting…</span>
+        <span class="latency" id="latencyText"></span>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <img class="hero-anime" src="img/hero-anime.jpg" alt="" />
+        <div class="hero-shade"></div>
+        <div class="hero-scan"></div>
+      </div>
+
+      <div class="orbit-chip oc1" aria-hidden="true">🌿 Brat Studio</div>
+      <div class="orbit-chip oc2" aria-hidden="true">🐍 Arcade Zone</div>
+
+      <div class="hero-content">
+        <div class="hero-badge" data-anim style="--d:.05s">✨ v3.1 — serba bisa, serba gratis</div>
+
+        <div class="hero-video-card" data-anim style="--d:.18s">
+          <div class="hvc-frame">
+            <video autoplay muted loop playsinline preload="auto" poster="img/hero.png">
+              <source src="video/hero.mp4" type="video/mp4" />
+              <source src="https://cdn.nekohime.site/file/690qd4z8.mp4" type="video/mp4" />
+            </video>
+            <span class="hvc-tag">▶ KYY REEL</span>
+          </div>
+        </div>
+
+        <h1 class="hero-title" data-anim style="--d:.32s">
+          Serba Ada.<br /><span class="grad-text">Tinggal Pencet.</span>
+        </h1>
+        <p class="hero-typed" data-anim style="--d:.46s">
+          <span id="typed"></span><span class="caret">▍</span>
+        </p>
+        <div class="hero-cta" data-anim style="--d:.6s">
+          <a href="#tools" class="btn btn-primary btn-glow">🚀 Gas Jelajah</a>
+          <a href="#info" class="btn btn-ghost">👁️ Intip Info Kamu</a>
+        </div>
+      </div>
+
+      <a class="hero-scroll" href="#statsbar" aria-label="Scroll ke bawah">⌄</a>
+    </section>
+
+    <!-- ======================= STAT STRIP ====================== -->
+    <div class="wrap" id="statsbar">
+        <div class="stat-strip rv">
+        <div class="stat"><b data-count="67" id="statTools">0</b><span>TOOLS</span></div>
+        <div class="stat"><b data-count="4">0</b><span>KATEGORI</span></div>
+        <div class="stat"><b>24/7</b><span>ONLINE</span></div>
+        <div class="stat"><b id="visitCount">1</b><span>KUNJUNGANMU</span></div>
+      </div>
+    </div>
+
+    <!-- ======================== MARQUEE ======================= -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee">
+        <div class="mq-track">
+          <span>⚡ 67 TOOLS GRATIS</span><span class="mq-star">✦</span><span>🎵 TIKTOK NO WM</span><span class="mq-star">✦</span><span>🎨 AI ART STUDIO</span><span class="mq-star">✦</span><span>🌿 BRAT GOJO</span><span class="mq-star">✦</span><span>🐍 ARCADE ZONE</span><span class="mq-star">✦</span><span>🏆 TOP ANIME</span><span class="mq-star">✦</span><span>🎁 GAME GRATISAN</span><span class="mq-star">✦</span><span>📱 IQC MAKER</span><span class="mq-star">✦</span><span>📸 REMOVE BG</span><span class="mq-star">✦</span><span>🔮 PRIMBON</span><span class="mq-star">✦</span><span>🧠 KUIS TRIVIA</span><span class="mq-star">✦</span><span>💬 SIMI CHAT</span><span class="mq-star">✦</span>
+        </div>
+      </div>
+      <div class="marquee mq-outline">
+        <div class="mq-track rev">
+          <span>ALL TOOLS KYY</span><span class="mq-star">✦</span><span>SERBA ADA</span><span class="mq-star">✦</span><span>TINGGAL PENCET</span><span class="mq-star">✦</span><span>TANPA IKLAN</span><span class="mq-star">✦</span><span>TANPA DRAMA</span><span class="mq-star">✦</span><span>ALL TOOLS KYY</span><span class="mq-star">✦</span><span>SERBA ADA</span><span class="mq-star">✦</span><span>TINGGAL PENCET</span><span class="mq-star">✦</span><span>TANPA IKLAN</span><span class="mq-star">✦</span><span>TANPA DRAMA</span><span class="mq-star">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================= TOOLS ========================= -->
+    <section id="tools">
+      <div class="section-head rv">
+        <span class="sh-kicker">🧰 toolbox-nya</span>
+        <h2 class="grad-text">Pilih Senjata Kamu</h2>
+        <p>67 tools gratis, tanpa iklan, tanpa drama. Filter kategori atau search langsung.</p>
+      </div>
+
+      <div class="whatsnew rv">
+        <span class="wn-label">🔥 BARU :</span>
+        <span class="wn-chip">🔍 HD Foto</span>
+        <span class="wn-chip">🎧 Music Card 2.0</span>
+        <span class="wn-chip">🐍 Arcade Zone</span>
+        <span class="wn-chip">🏆 Top Anime</span>
+        <span class="wn-chip">⚡ Pokédex</span>
+        <span class="wn-chip">🌍 Info Negara</span>
+        <span class="wn-chip">🐱 Anime Random+</span>
+        <span class="wn-chip">🧠 Kuis Trivia</span>
+        <span class="wn-chip">🎁 Game Gratisan</span>
+      </div>
+
+      <div class="toolbar glass rv">
+        <div class="tabs" id="tabs">
+          <button class="tab active" data-filter="all">⚡ All</button>
+          <button class="tab" data-filter="downloader">⬇️ Downloader</button>
+          <button class="tab" data-filter="maker">🎨 Maker</button>
+          <button class="tab" data-filter="tools">🛠️ Tools</button>
+          <button class="tab" data-filter="fun">🎲 Fun</button>
+        </div>
+        <div class="search-box">
+          <span>🔍</span>
+          <input type="text" id="searchInput" placeholder="Cari tools… (mis: snake, brat, anime)" autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="grid" id="toolsGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span>🛸</span>
+        <p>Yah, tools yang kamu cari tidak ditemukan…</p>
+      </div>
+    </section>
+
+    <!-- ====================== VISITOR INFO ===================== -->
+    <section id="info">
+      <div class="section-head rv">
+        <span class="sh-kicker">📡 radar aktiv</span>
+        <h2 class="grad-text">Deteksi Pengunjung</h2>
+        <p>Data ini kebaca otomatis dari koneksi & browser kamu pas buka halaman ini. Santai, ga disimpan kok.</p>
+      </div>
+      <div class="term-window rv">
+        <div class="term-bar">
+          <span class="td r"></span><span class="td y"></span><span class="td g"></span>
+          <span class="term-title">kyy@portal:~$ cek-pengunjung --live</span>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <span class="info-icon">🌍</span>
+            <div><label>Negara</label><b id="infCountry">Mendeteksi…</b></div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">💻</span>
+            <div><label>Device</label><b id="infDevice">—</b></div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">🌐</span>
+            <div><label>Browser</label><b id="infBrowser">—</b></div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">⚙️</span>
+            <div><label>Sistem Operasi</label><b id="infOs">—</b></div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">🏙️</span>
+            <div><label>Kota</label><b id="infCity">—</b></div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">🔢</span>
+            <div><label>Alamat IP</label><b id="infIp">—</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= DEVELOPER ======================= -->
+    <section id="dev">
+      <div class="section-head rv">
+        <span class="sh-kicker">👑 behind the scene</span>
+        <h2 class="grad-text">Yang Bikin Portal Ini</h2>
+      </div>
+      <div class="dev-card glass rv">
+        <div class="dev-avatar">
+          <img src="img/dev.png" alt="Rifkyy sensei" />
+          <span class="dev-ring"></span>
+        </div>
+        <div class="dev-info">
+          <div class="dev-badge">👑 YANG BIKIN</div>
+          <h2>Rifkyy <span class="grad-text">sensei</span></h2>
+          <p>
+            Gabut yang produktif. Awalnya cuma iseng bongkar scraper bot WhatsApp,
+            eh keterusan jadi web sekalian. Semua tools di sini gratis, ga bakal
+            minta kamu login apalagi bayar. Kalau ada downloader yang ngambek,
+            wajar — scraper medsos emang rewel, ntar aku benerin lagi 😤
+          </p>
+          <div class="dev-tags">
+            <span>#ngoprek</span><span>#dari-bot-jadi-web</span><span>#autodidak</span><span>#mager-nulis-dok</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer>
+    <div class="foot-mark" aria-hidden="true">
+      <div class="mq-track">
+        <span>ALL TOOLS KYY ✦ ALL TOOLS KYY ✦ ALL TOOLS KYY ✦ ALL TOOLS KYY ✦ </span><span>ALL TOOLS KYY ✦ ALL TOOLS KYY ✦ ALL TOOLS KYY ✦ ALL TOOLS KYY ✦ </span>
+      </div>
+    </div>
+    <div class="foot-inner">
+      <img src="img/logo.png" alt="KYY" class="foot-logo" />
+      <p>© 2026 <b>⚡ All Tools KYY</b> — dibikin iseng sama <b>Rifkyy sensei</b>, eh kepake banyak orang 💜</p>
+      <p class="foot-note" id="footFun"></p>
+      <p class="foot-note">Dipake buat hal baik ya — download konten sendiri aja, jangan reupload karya orang sembarangan ⚖️</p>
+    </div>
+  </footer>
+
+  <!-- ========================== MODAL ========================== -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal glass" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <h3 id="modalTitle">Tool</h3>
+        <button class="modal-close" id="modalClose" aria-label="Tutup">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ========================== TOAST ========================== -->
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

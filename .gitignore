@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Netlify local
+.netlify/
+
+# Env & secrets
+.env
+.env.local
+
+# OS & editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*

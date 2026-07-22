@@ -1,0 +1,23 @@
+{
+  "name": "all-tools-kyy",
+  "version": "1.0.0",
+  "description": "⚡ All Tools KYY — All-in-One Tools Portal (Downloader, Maker, Tools) by Rifkyy sensei",
+  "main": "netlify/functions/api.js",
+  "scripts": {
+    "start": "netlify dev",
+    "dev": "netlify dev",
+    "build": "npm install",
+    "test:api": "node test/run-tests.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "author": "Rifkyy sensei",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {}
+}
